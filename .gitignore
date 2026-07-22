@@ -1,0 +1,7 @@
+php/
+backend/vendor/
+backend/.env
+frontend/.env
+backend/storage/*.key
+backend/node_modules/
+frontend/node_modules/

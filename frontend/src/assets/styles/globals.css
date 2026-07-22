@@ -1,0 +1,11 @@
+html {
+  background: var(--color-background);
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgb(163 174 132 / 0.18), transparent 34rem),
+    var(--color-background);
+  color: #24301f;
+}

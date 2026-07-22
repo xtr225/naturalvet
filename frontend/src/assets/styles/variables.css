@@ -1,0 +1,12 @@
+:root {
+  --app-sidebar-expanded: 272px;
+  --app-sidebar-collapsed: 84px;
+  --color-primary: #7e8b5d;
+  --color-primary-light: #a3ae84;
+  --color-secondary: #c46a42;
+  --color-secondary-dark: #a95433;
+  --color-background: #f5f2ea;
+  --color-surface: #ffffff;
+  --color-olive-dark: #53613b;
+  --shadow-soft: 0 16px 40px rgb(83 97 59 / 0.12);
+}

@@ -229,6 +229,10 @@ function paymentPayload(payload) {
 }
 
 function mapUser(user) {
+  if (!user?.id) {
+    throw new Error("La API no devolvio los datos del usuario. Verifica que el frontend apunte a Laravel local.");
+  }
+
   return {
     id: user.id,
     name: user.name,

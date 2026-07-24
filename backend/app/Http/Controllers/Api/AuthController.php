@@ -18,13 +18,11 @@ class AuthController extends Controller
             'password' => ['required', 'string'],
         ]);
 
-       $user = User::where('email', $credentials['email'])->first();
-       return response()->json([
-        'email_recibido' => $credentials['email'],
-        'password_recibido' => $credentials['password'],
-        'usuario_encontrado' => $user?->email,
-        'hash_ok' => $user ? Hash::check($credentials['password'], $user->password) : false,
-        ]);
+        $user = User::query()->where('email', $credentials['email'])->first();
+
+        if (!$user || !Hash::check($credentials['password'], $user->password)) {
+            return response()->json(['message' => 'Credenciales invalidas'], 422);
+        }
 
         $user->forceFill(['api_token' => hash('sha256', Str::random(80))])->save();
 

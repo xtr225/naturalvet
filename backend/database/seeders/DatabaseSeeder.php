@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'admin@vetsystem.test'],
             [
                 'name' => 'Admin Veterinaria',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('admin123'),
                 'role' => 'admin',
                 'permissions' => ['dashboard:view', 'clients:manage', 'pets:manage', 'appointments:manage', 'medical-records:manage', 'inventory:manage', 'payments:manage', 'users:manage', 'reports:view'],
             ]

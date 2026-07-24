@@ -17,13 +17,17 @@ class Cors
         }
 
         $origin = $request->headers->get('Origin');
-        $allowedOrigins = [
+        $allowedOrigins = array_filter([
             'http://localhost:5173',
             'http://127.0.0.1:5173',
-        ];
+            env('FRONTEND_URL'),
+        ]);
 
-        if (in_array($origin, $allowedOrigins, true)) {
+        $isRailwayOrigin = is_string($origin) && str_ends_with(parse_url($origin, PHP_URL_HOST) ?? '', '.up.railway.app');
+
+        if (in_array($origin, $allowedOrigins, true) || $isRailwayOrigin) {
             $response->headers->set('Access-Control-Allow-Origin', $origin);
+            $response->headers->set('Vary', 'Origin');
         }
 
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');

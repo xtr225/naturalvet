@@ -24,7 +24,7 @@ export default function AuthLayout({ children }) {
         </div>
 
         <p className="relative z-10 text-sm text-white/65">
-          Puno - Perú · Acceso demo: admin@vetsystem.test / password
+          Puno - Perú · Acceso demo: admin@vetsystem.test / admin123
         </p>
       </section>
 
